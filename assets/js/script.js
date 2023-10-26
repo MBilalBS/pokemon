@@ -28,16 +28,96 @@ async function getDataFetch () {
 
     } 
     // ---------je met mes image dans la selection---------
-      let pokemonImg = document.createElement("img");
+              let pokemonImg = document.createElement("img");
     document.querySelector(".img-box").appendChild(pokemonImg);
+    pokemonImg.classList.add("img-box");
 
-    let choixPokemon = monSelect.addEventListener('change', () => {
-        pokemonImg.setAttribute("src", datasFetch[monSelect.selectedIndex-1].image)  ;
-        document.getElementById("img-box").appendChild(pokemonImg)
-    })
+    
+    let choixPokemon = document.querySelector("selected")
+    choixPokemon = monSelect.addEventListener('change', () => {
+        document.querySelector(".colomne").innerHTML = "";
+        pokemonImg.setAttribute("src", datasFetch[monSelect.selectedIndex-1].image) ;
 
-    console.log(innerHeight);
-    console.log(innerWidth);
+        let pokemonHp = document.createElement("p");
+        pokemonHp.classList.add("HP");
+        pokemonHp.textContent = datasFetch[monSelect.selectedIndex-1].stats.HP ;
+        document.querySelector(".colomne").appendChild(pokemonHp);
+        choixPokemon = document.querySelector("selected");
+
+        let pokemonAttack = document.createElement("p");
+        pokemonAttack.classList.add("attack")
+        pokemonAttack.textContent = datasFetch[monSelect.selectedIndex-1].stats.attack ;
+        document.querySelector(".colomne").appendChild(pokemonAttack);
+        choixPokemon = document.querySelector("selected");
+        
+        let pokemonDefense = document.createElement("p");
+        pokemonDefense.classList.add("defense");
+        pokemonDefense.textContent = datasFetch[monSelect.selectedIndex-1].stats.defense ;
+        document.querySelector(".colomne").appendChild(pokemonDefense);
+        choixPokemon = document.querySelector("selected");
+
+        let pokemonAttackSpecial = document.createElement("p");
+        pokemonAttackSpecial.classList.add("attack-special")
+        pokemonAttackSpecial.textContent = datasFetch[monSelect.selectedIndex-1].stats.special_attack ;
+        document.querySelector(".colomne").appendChild(pokemonAttackSpecial) 
+        choixPokemon = document.querySelector("selected");
+
+        let pokemonDefenseSpecial = document.createElement("p");
+        pokemonDefenseSpecial.classList.add("defense-special");
+        pokemonDefenseSpecial.textContent = datasFetch[monSelect.selectedIndex-1].stats.special_defense ;
+        document.querySelector(".colomne").appendChild(pokemonDefenseSpecial);
+        choixPokemon = document.querySelector("selected");
+
+        let pokemonSpeed = document.createElement("p");
+        pokemonSpeed.innerText = ("SPEED")
+        pokemonSpeed.classList.add("defense-special");
+        pokemonSpeed.textContent = datasFetch[monSelect.selectedIndex-1].stats.speed ;
+        document.querySelector(".colomne").appendChild(pokemonSpeed);
+        choixPokemon = document.querySelector("selected");
+        
+        })
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        let pokemonHp = document.getElementById("hp");
+//         pokemonHp.classList.add("colomne");
+//             pokemonHp.innerText = "?";
+//        let attack = document.getElementById("attack")
+           
+            
+            
+//  let choixPokemon = document.querySelector("selected")
+//     choixPokemon = monSelect.addEventListener('change', () => {
+//         pokemonImg.setAttribute("src", datasFetch[monSelect.selectedIndex-1].image) ;
+        
+//         pokemonHp.innerText = datasFetch[choixPokemon.selectedIndex-1].stats.HP;
+//         attack
+
+//     }
+//     )
+        
+    
+        
+
 // let uneOption
 // let unPokemon = document.createElement("img")
 // document.querySelector("select").addEventListener("change", (eventChange)=> {
