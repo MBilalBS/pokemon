@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     /* border: solid 1px red; */
@@ -16,13 +17,13 @@ main{
     height: 750px;
     margin-top: 100px;
     box-shadow: 50px;
-    border-radius: 1.5%;
+    /* border-radius: 1.5%; */
     border: 20px solid #2F54A4;
 }
 
 
 
-#img-glob{
+#pokemon-glob{
     display: flex;
     /* border: 2px solid red; */
     justify-content: space-around;
@@ -37,19 +38,20 @@ main{
 }
 
 .img-box{
-    width: 283px;
-    height: 320px;
-    border-style: none;
+    width: 300px;
+    /* height: 310px; */
 }
 
 .ma-class{
     font-family: "Pokemon font";
-    color: #2F54A4;
+    color: #FBCC01;
+    font-size: 20px;
 }
 
 .mon-select{
     background-color: #2F54A4;
     height: 30px;
+    justify-items: center;
     
     color: #FBCC01;
     /* font-family: "Pokemon font"; */
@@ -69,7 +71,7 @@ fieldset{
 
 h1{
     text-align: center;
-    margin: 55px;
+    margin: 40px;
     font-size: 50px;
     font-family: "Pokemon font";
     color: #FBCC01;
@@ -82,14 +84,27 @@ h1{
     justify-content: center;
 }
 
-.colomne{
+.stats{
     /* justify-content: right; */
     /* border: 1px solid red; */
-    height: 320px;
-    width: 100px;
+    
+    /* border: 1px solid red; */
+    width: 410px;
    
 
 }
+
+.stats li{
+    margin: 2%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FBCC01;
+    border: 2px solid #2F54A4;
+    font-family: 'Courier New', Courier, monospace;
+    list-style: url(/assets/img/file-pokeball-png-0.png);
+
+}
+
 .HP{
     height: 52px;
     width: 100px;

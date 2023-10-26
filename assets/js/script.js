@@ -1,19 +1,19 @@
-let datasFetch;
-const urlApi = "https://pokebuildapi.fr/api/v1/pokemon/limit/26";
+let arrayListPokemons;
+const urlApi = "https://pokebuildapi.fr/api/v1/pokemon/limit/1200";
 
 const monSelect = document.querySelector("select");
 
 
 // -------je charge mon select---------
-await getDataFetch();
-async function getDataFetch () {
+await getListPokemons();
+async function getListPokemons () {
     const res = await fetch(urlApi);
-    datasFetch = await res.json();
+    arrayListPokemons = await res.json();
 
-    console.log("Les 26 pokemons : ", datasFetch);
+    console.log("Les 26 pokemons : ", arrayListPokemons);
 
     // const monSelect = document.querySelector("select");
-    datasFetch.forEach(unPokemon => {
+    arrayListPokemons.forEach(unPokemon => {
         let uneOption = document.createElement("option");
         uneOption.value = unPokemon.name;
         uneOption.innerText = unPokemon.name;
@@ -21,60 +21,31 @@ async function getDataFetch () {
         // ----------------je crée mes image de pokemon---------------------
     // let choixPokemon = monSelect.addEventListener('change', () => {
     //     let pokemonImg = document.createElement("img");
-    //     pokemonImg.setAttribute("src", datasFetch[1].image)  ;
+    //     pokemonImg.setAttribute("src", arrayListPokemons[1].image)  ;
     //     document.querySelector(".img-box").appendChild(pokemonImg);
     // })
     })
 
     } 
-    // ---------je met mes image dans la selection---------
-              let pokemonImg = document.createElement("img");
-    document.querySelector(".img-box").appendChild(pokemonImg);
-    pokemonImg.classList.add("img-box");
-
     
-    let choixPokemon = document.querySelector("selected")
-    choixPokemon = monSelect.addEventListener('change', () => {
-        document.querySelector(".colomne").innerHTML = "";
-        pokemonImg.setAttribute("src", datasFetch[monSelect.selectedIndex-1].image) ;
+    // -----------je génère l'affichage des informatinos du pokemon choisi
 
-        let pokemonHp = document.createElement("p");
-        pokemonHp.classList.add("HP");
-        pokemonHp.textContent = datasFetch[monSelect.selectedIndex-1].stats.HP ;
-        document.querySelector(".colomne").appendChild(pokemonHp);
-        choixPokemon = document.querySelector("selected");
-
-        let pokemonAttack = document.createElement("p");
-        pokemonAttack.classList.add("attack")
-        pokemonAttack.textContent = datasFetch[monSelect.selectedIndex-1].stats.attack ;
-        document.querySelector(".colomne").appendChild(pokemonAttack);
-        choixPokemon = document.querySelector("selected");
-        
-        let pokemonDefense = document.createElement("p");
-        pokemonDefense.classList.add("defense");
-        pokemonDefense.textContent = datasFetch[monSelect.selectedIndex-1].stats.defense ;
-        document.querySelector(".colomne").appendChild(pokemonDefense);
-        choixPokemon = document.querySelector("selected");
-
-        let pokemonAttackSpecial = document.createElement("p");
-        pokemonAttackSpecial.classList.add("attack-special")
-        pokemonAttackSpecial.textContent = datasFetch[monSelect.selectedIndex-1].stats.special_attack ;
-        document.querySelector(".colomne").appendChild(pokemonAttackSpecial) 
-        choixPokemon = document.querySelector("selected");
-
-        let pokemonDefenseSpecial = document.createElement("p");
-        pokemonDefenseSpecial.classList.add("defense-special");
-        pokemonDefenseSpecial.textContent = datasFetch[monSelect.selectedIndex-1].stats.special_defense ;
-        document.querySelector(".colomne").appendChild(pokemonDefenseSpecial);
-        choixPokemon = document.querySelector("selected");
-
-        let pokemonSpeed = document.createElement("p");
-        pokemonSpeed.innerText = ("SPEED")
-        pokemonSpeed.classList.add("defense-special");
-        pokemonSpeed.textContent = datasFetch[monSelect.selectedIndex-1].stats.speed ;
-        document.querySelector(".colomne").appendChild(pokemonSpeed);
-        choixPokemon = document.querySelector("selected");
-        
+        monSelect.addEventListener('change', (eventInfos) => {
+            document.querySelector(".stats").innerHTML = "";
+            const pokemonChoisi = arrayListPokemons.find((pokemon) => pokemon.name == eventInfos.target.value);
+        // ---------je charge l'image dans pokemon-glob---------
+            document.querySelector(".img-box").setAttribute("src", pokemonChoisi.image);
+            // document.querySelector(".img-box").appendChild(pokemonImg);
+            // pokemonImg.classList.add("img-box");
+            console.log("Stats du pokemon : ", pokemonChoisi.stats);
+            let maTable = document.createElement("table");
+            for (const [propriete, valeur] of Object.entries(pokemonChoisi.stats)) {
+                console.log(`${propriete}: ${valeur}`);
+                let uneStat = document.createElement("li");
+                // uneStat.textContent = propriete + " : " + valeur;
+                uneStat.textContent = `${propriete} : ${valeur}`;
+                document.querySelector(".stats").appendChild(uneStat);
+              }
         })
     
 
