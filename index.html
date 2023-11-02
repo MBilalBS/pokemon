@@ -12,19 +12,39 @@
       
         <main>
             <h1>INFORMATIONS POKEMON</h1>
+
+
+
+            <div class="radio">
+                    <div class="button-radio-1">
+                        <input type="radio" id="name" name="radio-critere" value="nom" checked />
+                        <label for="name">Nom</label>
+                    </div>
+              
+                    <div class="button-radio-2">
+                        <input type="radio"  id="type" name="radio-critere" value="type">
+                        <label for="type">Type</label> 
+                    </div>
+            </div>
+                    
+                    
+
             <fieldset class="ma-class">
                 <legend>Sélectionnez un Pokémon</legend>
                 <select class="mon-select">
-                    <option selected>--Choix Pokemon--</option>
+                    <!-- <option selected value="0">--Choix Pokemon--</option> -->
                 </select>
             </fieldset>
             <div id="pokemon-glob">
                 <img class="img-box" />
-                <ul class="stats"></ul>
+                <div class="stats1"><ul class="stats"></ul></div>
                 <div class="others"></div>
+                
                    
             </div>
-           
+           <div class="button-plus-dad">
+             <button type="button" class="button-plus">+</button>
+        </div>
             
                 
             
