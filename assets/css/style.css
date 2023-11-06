@@ -1,8 +1,206 @@
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* border: solid 1px red; */
+}
+body{
+    background-image: url(/assets/img/background.jpg);
+    display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 main{
+    background-color: hsla(216, 100%, 65%, 0.9);
+    width: 850px;
+    height: 750px;
+    margin-top: 100px;
+    box-shadow: 50px;
+    /* border-radius: 1.5%; */
+    border: 20px solid #2F54A4;
+}
+
+
+
+#pokemon-glob{
+    display: flex;
+    height: 300px;
+    margin: 20px;
+    /* border: 2px solid red; */
+    justify-content: space-around;
+}
+
+.colomne{
+    height: 50px;
+    /* border: 1px solid red; */
+    width: 50px;
+    justify-content: right;
+
+}
+
+.img-box{
+    width: fit-content;
+    /* height: 310px; */
+}
+
+.ma-class{
+    font-family: "Pokemon font";
+    color: #FBCC01;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-plus-dad{
+    display: flex;
+    justify-content: center;
+}
+.button-plus{
+    visibility: hidden;
+    background-color: #2F54A4;
+    color: #FBCC01;
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
     
+}
+
+.mon-select{
+    background-color: #2F54A4;
+    height: 30px;
+    justify-items: center;
+    
+    color: #FBCC01;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+fieldset{
+    padding: 25px;
+    margin: 0px 230px;
+    border: 5px solid #2F54A4;
+}
+
+
+@font-face {
+    font-family: "Pokemon font";
+    src: url(/assets/font/Pokemon\ Solid.ttf);
+}
+
+h1{
+    text-align: center;
+    margin: 10px;
+    font-size: 50px;
+    font-family: "Pokemon font";
+    color: #FBCC01;
+    -webkit-text-stroke: 2px #2F54A4;
+    text-shadow: 0 0 2px #2F54A4 ;
+}
+
+.ma-div-recherche{
+    display: flex;
+    justify-content: center;
+}
+
+.stats1{
+    /* justify-content: right; */
+    /* border: 1px solid red; */
+    
+    /* border: 1px solid red; */
+    
+    height: 325px;
+    width: 410px;
+   
+
+}
+
+.stats li{
+    margin: 2%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FBCC01;
+    border: 2px solid #2F54A4;
+    font-family: 'Courier New', Courier, monospace;
+    list-style: url(/assets/img/file-pokeball-png-0.png);
+    
+}
+
+.HP{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4;
+}
+
+.attack{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4;
+}
+.defense{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4;
+}
+
+.attack-special{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4;
+}
+
+.defense-special{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4;
+}
+
+.speed{
+    height: 52px;
+    width: 100px;
+    border: 3px solid #2F54A4;
+    font-size: 50px;
+    text-align: center;
+    color: #2F54A4; 
+    margin-bottom: px;
+}
+
+.radio{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: center;
+}
+
+.button-radio-1{
+    margin-right: 30px;
+    color: #FBCC01;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+.button-radio-2{
+    margin-left: 30px;
+    color: #FBCC01;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+.stats{
+    height: 325px;
+    max-height: fit-content;
+    overflow: auto ;
 }

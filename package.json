@@ -1,0 +1,22 @@
+{
+  "name": "pokemon",
+  "version": "1.0.0",
+  "description": "application ressencement de pokemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBilalBS/pokemon.git"
+  },
+  "author": "Bilal Ben saci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MBilalBS/pokemon/issues"
+  },
+  "homepage": "https://github.com/MBilalBS/pokemon#readme",
+  "dependencies": {
+    "ajax": "^0.0.4"
+  }
+}
