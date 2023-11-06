@@ -102,20 +102,18 @@ h1{
     justify-content: center;
 }
 
-.stats{
+.stats1{
     /* justify-content: right; */
     /* border: 1px solid red; */
     
     /* border: 1px solid red; */
+    
+    height: 325px;
     width: 410px;
-    max-height: 300px;
-    max-width: 410px;
    
 
 }
-.stats1{
-    max-height: 50%;
-}
+
 .stats li{
     margin: 2%;
     font-size: 30px;
@@ -124,7 +122,7 @@ h1{
     border: 2px solid #2F54A4;
     font-family: 'Courier New', Courier, monospace;
     list-style: url(/assets/img/file-pokeball-png-0.png);
-
+    
 }
 
 .HP{
@@ -201,6 +199,8 @@ h1{
     font-size: 25px;
 }
 
-.un-type-liste{
-    color: red;
+.stats{
+    height: 325px;
+    max-height: fit-content;
+    overflow: auto ;
 }

@@ -1,6 +1,6 @@
 let arrayListPokemons;
 let arrayListTypes;
-const urlApi = "https://pokebuildapi.fr/api/v1/pokemon/limit/700";
+const urlApi = "https://pokebuildapi.fr/api/v1/pokemon/limit/900";
 const urlApiElements = "https://pokebuildapi.fr/api/v1/types";
 
 const monSelect = document.querySelector("select");
@@ -19,6 +19,7 @@ document.querySelectorAll("input[type='radio']").forEach(radio => {
                      uneOption.value = unPokemon.name;
                       uneOption.innerText = unPokemon.name;
               monSelect.appendChild(uneOption);
+              document.querySelector("legend").innerHTML = "Sélectionnez un Pokemon";
           })
         } else {
             const monSelect = document.querySelector("select");
@@ -27,6 +28,7 @@ document.querySelectorAll("input[type='radio']").forEach(radio => {
                        uneOption.value = unType.name;
                         uneOption.innerText = unType.name;
                 monSelect.appendChild(uneOption);
+                document.querySelector("legend").innerHTML = "Sélectionnez un Type";
             })
         }
     })
@@ -74,6 +76,7 @@ async function getListPokemons () {
             if (eventInfos.target.value != "0") {
                 if (document.querySelector("input[type='radio']:checked").value == "nom") {
                     const pokemonChoisi = arrayListPokemons.find((pokemon) => pokemon.name == monSelect.value);
+                    // document.querySelector("legend").innerHTML = "Sélectionnez un Pokemon";
                     document.querySelector(".stats").innerHTML = "";
                 // ---------je charge l'image dans pokemon-glob---------
                     document.querySelector(".img-box").setAttribute("src", pokemonChoisi.image);
@@ -90,6 +93,7 @@ async function getListPokemons () {
                     }
                 } else {
                     const typeChoisi = arrayListTypes.find((type) => type.name == monSelect.value);
+                    // document.querySelector("legend").innerHTML = "Sélectionnez un Type";
                     document.querySelector(".stats").innerHTML = "";
                     document.querySelector(".img-box").setAttribute("src", typeChoisi.image);
                     const arrayPokemonsFromType = arrayListPokemons.filter((pokemon) => pokemon.apiTypes.some(type => type.name == monSelect.value));
